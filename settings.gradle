@@ -1,1 +1,2 @@
-rootProject.name="kt-rumble"
+include 'backend'
+include 'frontend'

@@ -1,16 +1,17 @@
 package chessequality.kt.rumble.controller
 
+import io.micronaut.http.HttpResponse
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Produces
 
-@Controller("/hello")
-class HelloController {
+@Controller("/")
+class MainController {
 
-    @Get("/")
+    @Get("/{name}")
     @Produces(MediaType.TEXT_PLAIN)
-    fun index(): String {
-        return "Hello Micronaut!"
+    fun greetName(name: String): HttpResponse<String> {
+        return HttpResponse.ok("Hello, $name!")
     }
 }

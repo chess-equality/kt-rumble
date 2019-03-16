@@ -7,17 +7,17 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.spekframework.spek2.Spek
 import org.spekframework.spek2.style.specification.describe
 
-object HelloControllerSpec: Spek({
+object MainControllerSpec: Spek({
 
-    describe("HelloController Suite") {
+    describe("MainController Suite") {
 
         var embeddedServer : EmbeddedServer = ApplicationContext.run(EmbeddedServer::class.java)
         var client : HttpClient = HttpClient.create(embeddedServer.url)
 
-        it("test /hello responds Hello Micronaut!") {
+        it("test /Micronaut responds Hello, Micronaut!") {
 
-            var rsp : String = client.toBlocking().retrieve("/hello")
-            assertEquals(rsp, "Hello Micronaut!")
+            var rsp : String = client.toBlocking().retrieve("/Micronaut")
+            assertEquals(rsp, "Hello, Micronaut!")
         }
 
         afterGroup {
