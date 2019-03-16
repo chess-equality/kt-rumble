@@ -24,7 +24,6 @@ class App extends React.Component {
                         <input type="text" value={this.state.name} onChange={this.setName} />
                         <input type="submit" value="Submit" />
                     </form>
-
                     {/* <5> */}
                     <p>
                         { this.state.message ?
@@ -42,19 +41,28 @@ class App extends React.Component {
                     </a>
                 </header>
             </div>
+        );
 
-            /*
+        /*
+        return (
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
-                    <h1 className="App-title">Welcome to React</h1>
+                    <p>
+                        Edit <code>src/App.tsx</code> and save to reload.
+                    </p>
+                    <a
+                        className="App-link"
+                        href="https://reactjs.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Learn React
+                    </a>
                 </header>
-                <p className="App-intro">
-                  To get started, edit <code>src/App.tsx</code> and save to reload.
-                </p>
             </div>
-            */
         );
+        */
     }
 
     private setName = (event: any) => this.setState({name: event.target.value});
