@@ -5,7 +5,7 @@ import { SERVER_URL } from "./config";
 import './App.css';
 import logo from './logo.svg';
 
-import Hello from "./component/Hello";
+import Hello from "./components/Hello";
 
 class App extends React.Component {
 
@@ -30,13 +30,15 @@ class App extends React.Component {
                         <input type="submit" value="Submit" />
                     </form>
                     {/* <5> */}
-                    <p>
+                    <div>
                         {(this.state.message && this.state.enthusiasmLevel > 0) ?
                             /*<strong>{this.state.message}</strong> :*/
-                            <strong><Hello name={this.state.message} enthusiasmLevel={this.state.enthusiasmLevel} /></strong> :
-                            <span>Edit <code>src/App.tsx</code> and save to reload.</span>
+                            <strong>
+                                <Hello name={this.state.message} enthusiasmLevel={this.state.enthusiasmLevel} />
+                            </strong> :
+                            <span><p>Edit <code>src/App.tsx</code> and save to reload.</p></span>
                         }
-                    </p>
+                    </div>
                     <a
                         className="App-link"
                         href="https://reactjs.org"

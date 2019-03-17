@@ -12,9 +12,9 @@ function Hello({ name, enthusiasmLevel = 1 }: IProps) {
     }
 
     return (
-        <span>
+        <span><p>
             {name + getExclamationMarks(enthusiasmLevel)}
-        </span>
+        </p></span>
     );
 }
 
