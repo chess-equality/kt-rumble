@@ -5,18 +5,24 @@ import './Hello.css';
 export interface IProps {
     name: string;
     enthusiasmLevel?: number;
+    onIncrement?: () => void;
+    onDecrement?: () => void;
 }
 
-function Hello({ name, enthusiasmLevel = 1 }: IProps) {
+function Hello({ name, enthusiasmLevel = 1, onIncrement, onDecrement }: IProps) {
 
     if (enthusiasmLevel <=  0) {
         throw new Error('You could be a little more enthusiastic. :D');
     }
 
     return (
-        <span><p className="greetReceiver">
-            {name + getExclamationMarks(enthusiasmLevel)}
-        </p></span>
+        <span>
+            <p className="greetReceiver">
+                {name + getExclamationMarks(enthusiasmLevel)}
+            </p>
+            <button onClick={onIncrement}>+</button>
+            <button onClick={onDecrement}>-</button>
+        </span>
     );
 }
 

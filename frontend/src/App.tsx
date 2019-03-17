@@ -1,11 +1,22 @@
 import * as React from 'react';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 
 import { SERVER_URL } from "./config";
+
+import { IStoreState } from "./state/types";
+import { enthusiasm } from "./state/reducers";
+import { EnthusiasmAction } from "./state/actions";
+
+import Hello from "./state/containers/Hello";
 
 import './App.css';
 import logo from './logo.svg';
 
-import Hello from "./components/Hello";
+const store = createStore<IStoreState, EnthusiasmAction, any, any>(enthusiasm, {
+    enthusiasmLevel: 1,
+    languageName: 'TypeScript',
+});
 
 class App extends React.Component {
 
@@ -34,7 +45,10 @@ class App extends React.Component {
                         {(this.state.message && this.state.enthusiasmLevel > 0) ?
                             /*<strong>{this.state.message}</strong> :*/
                             <strong>
-                                <Hello name={this.state.message} enthusiasmLevel={this.state.enthusiasmLevel} />
+                                <Provider store={store}>
+                                    <Hello />
+                                    {/*<Hello name={this.state.message} enthusiasmLevel={this.state.enthusiasmLevel} />*/}
+                                </Provider>
                             </strong> :
                             <span><p>Edit <code>src/App.tsx</code> and save to reload.</p></span>
                         }
