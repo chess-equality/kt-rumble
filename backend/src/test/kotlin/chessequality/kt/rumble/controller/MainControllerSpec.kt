@@ -14,10 +14,10 @@ object MainControllerSpec: Spek({
         var embeddedServer : EmbeddedServer = ApplicationContext.run(EmbeddedServer::class.java)
         var client : HttpClient = HttpClient.create(embeddedServer.url)
 
-        it("test /Micronaut responds Hello, Micronaut!") {
+        it("test /Micronaut responds Hello, Micronaut") {
 
             var rsp : String = client.toBlocking().retrieve("/Micronaut")
-            assertEquals(rsp, "Hello, Micronaut!")
+            assertEquals(rsp, "Hello, Micronaut")
         }
 
         afterGroup {

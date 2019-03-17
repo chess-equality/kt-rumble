@@ -12,6 +12,6 @@ class MainController {
     @Get("/{name}")
     @Produces(MediaType.TEXT_PLAIN)
     fun greetName(name: String): HttpResponse<String> {
-        return HttpResponse.ok("Hello, $name!")
+        return HttpResponse.ok("Hello, $name")
     }
 }
