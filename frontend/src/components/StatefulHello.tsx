@@ -26,7 +26,7 @@ class StatefulHello extends React.Component<IProps, IState> {
 
         return (
             <span>
-                <p>
+                <p className="greetReceiver">
                     {name + getExclamationMarks(this.state.currentEnthusiasm)}
                 </p>
                 <button onClick={this.onDecrement}>-</button>

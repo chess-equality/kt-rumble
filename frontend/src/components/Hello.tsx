@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+import './Hello.css';
+
 export interface IProps {
     name: string;
     enthusiasmLevel?: number;
@@ -12,7 +14,7 @@ function Hello({ name, enthusiasmLevel = 1 }: IProps) {
     }
 
     return (
-        <span><p>
+        <span><p className="greetReceiver">
             {name + getExclamationMarks(enthusiasmLevel)}
         </p></span>
     );
