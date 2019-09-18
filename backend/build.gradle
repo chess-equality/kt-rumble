@@ -51,6 +51,7 @@ dependencies {
 
 shadowJar {
     mergeServiceFiles()
+    archiveFileName = "kt-rumble.jar"
 }
 
 run.classpath += configurations.developmentOnly
