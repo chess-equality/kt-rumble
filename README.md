@@ -1,2 +1,2 @@
 # kt-rumble
-Super Galaxy Rumble
+Awesome Micronaut Kotlin + React (CRA) TypeScript
